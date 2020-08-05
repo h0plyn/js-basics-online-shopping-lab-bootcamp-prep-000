@@ -71,9 +71,19 @@ function placeOrder(cardNumber) {
     return "Sorry, we don't have a credit card on file for you.";
   };
   
-  async function clearCart() {
-    await cart = [];
-  }
+ function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(cart = []);
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+}
+
   
   return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`;
 
