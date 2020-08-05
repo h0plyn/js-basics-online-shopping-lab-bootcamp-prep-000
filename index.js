@@ -75,7 +75,7 @@ function placeOrder(cardNumber) {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(cart = []);
-    }, 2000);
+    }, 1000);
   });
 }
 
