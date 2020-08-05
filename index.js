@@ -71,7 +71,10 @@ function placeOrder(cardNumber) {
     return "Sorry, we don't have a credit card on file for you.";
   };
   
+  async function clearCart() {
+    await cart = [];
+  }
+  
   return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`;
-    cart.splice(0 ,cart.length)
 
 }
